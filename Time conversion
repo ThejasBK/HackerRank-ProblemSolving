@@ -1,11 +1,5 @@
-#!/bin/python3
-
 import os
 import sys
-
-#
-# Complete the timeConversion function below.
-#
 def timeConversion(s):
     x=s[8:]
     a=int(s[:2])
