@@ -1,0 +1,40 @@
+#!/bin/python3
+
+import os
+import sys
+
+#
+# Complete the timeConversion function below.
+#
+def timeConversion(s):
+    x=s[8:]
+    a=int(s[:2])
+    time=str()
+    if x=='PM':
+        if a==12:
+            time='12'
+            time+=s[2:8]
+            return time
+        a=a+12
+        time=str(a)
+        time+=s[2:8]
+        return time
+    else:
+        if a==12:
+            time='00'
+            time+=s[2:8]
+            return time
+        if a<10:
+            time='0'
+            time=time+str(a)+s[2:8]
+            return time
+if __name__ == '__main__':
+    f = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    f.write(result + '\n')
+
+    f.close()
