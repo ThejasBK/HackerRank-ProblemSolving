@@ -1,0 +1,24 @@
+import math
+import os
+import random
+import re
+import sys
+import string
+
+def designerPdfViewer(h, word):
+    sent=list(string.ascii_lowercase)
+    w=list(word)
+    max=0
+    for i in w:
+        x=sent.index(i)
+        if max<h[x]:
+            max=h[x]
+    return max*len(w)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    h = list(map(int, input().rstrip().split()))
+    word = input()
+    result = designerPdfViewer(h, word)
+    fptr.write(str(result) + '\n')
+    fptr.close()
