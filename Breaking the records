@@ -3,10 +3,10 @@ ls = list(map(int,input().split()))
 mx = mn = ls[0]
 cmx = cmn = 0
 for i in ls[1:]:
-    if i>mx:
+    if i > mx:
         cmx += 1
         mx = i
-    elif i<mn:
+    elif i < mn:
         cmn += 1
         mn = i
 print(cmx,cmn)
