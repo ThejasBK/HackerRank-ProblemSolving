@@ -1,0 +1,7 @@
+start, end, check = input().split()
+count = 0
+for i in range(int(start), int(end) + 1):
+    i = str(i)
+    if abs(int(i) - int(i[::-1])) % int(check) == 0:
+        count += 1
+print(count)
