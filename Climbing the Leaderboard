@@ -1,0 +1,13 @@
+a1 = int(input())
+leaderboard = sorted(list(set(map(int,input().split()))),reverse = True)
+a2 = int(input())
+alice = list(map(int,input().split()))
+for i in alice:
+    if i not in leaderboard:
+        for j in range(len(leaderboard)):
+            if i > leaderboard[j]:
+                leaderboard.insert(j,i)
+                break
+    if i not in leaderboard:
+        leaderboard.append(i)
+    print(leaderboard.index(i) + 1)
