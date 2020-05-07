@@ -1,0 +1,13 @@
+int(input())
+minDist = 999999999999
+ls = list(map(int,input().split()))
+for i in range(len(ls)):
+    for j in range(len(ls)):
+        if i != j:
+            if ls[i] == ls[j]:
+                if abs(i - j) < minDist:
+                    minDist = abs(i - j)
+if minDist == 999999999999:
+    print(-1)
+else:
+    print(minDist)
