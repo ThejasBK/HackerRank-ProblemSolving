@@ -1,0 +1,35 @@
+words = {1:'one',2:'two',3:'three',4:'four',5:'five',6:'six',7:'seven',8:'eight',9:'nine',10:'ten',11:'eleven',12:'twelve',13:'thirteen',15:'quarter',20:'twenty',30:'half',00:"o' clock"}
+
+hours = int(input())
+minutes = int(input())
+if minutes == 00:
+    print(words[hours],words[minutes])
+elif minutes > 30:
+    minutes = 60 - minutes
+    if minutes == 1:
+        print('one minute to',words[hours])
+    elif minutes not in words and minutes < 20:
+        s = words[minutes % 10]+'teen'
+        print(s,'minutes to',words[hours + 1])
+    elif minutes not in words:
+        s = words[20]+' '+words[minutes - 20]
+        print(s,'minutes to',words[hours + 1])
+    elif minutes == 15:
+        print('quarter to',words[hours + 1])
+    else:
+        print(words[minutes],'minutes to',words[hours + 1])
+elif minutes < 30:
+    if minutes == 1:
+        print('one minute past',words[hours])
+    elif minutes not in words and minutes < 20:
+        s = words[minutes % 10]+'teen'
+        print(s,'minutes past',words[hours])
+    elif minutes not in words:
+        s = words[20]+' '+words[minutes - 20]
+        print(s,'minutes past',words[hours])
+    elif minutes == 15:
+        print('quarter past',words[hours])
+    else:
+        print(words[minutes],'minutes past',words[hours])
+else:
+    print('half past',words[hours])
