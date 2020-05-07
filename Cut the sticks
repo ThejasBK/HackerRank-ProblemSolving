@@ -1,0 +1,9 @@
+int(input())
+ls = list(map(int,input().split()))
+while len(ls) != 0:
+    print(len(ls))
+    x = min(ls)
+    for i in range(len(ls)):
+        ls[i] = ls[i] - x
+    while 0 in ls: 
+        ls.remove(0)
