@@ -1,0 +1,5 @@
+_, n = map(int,input().split())
+ls = list(map(int,input().split()))
+for _ in range(n):
+    start, end = map(int,input().split())
+    print(min(ls[start:end + 1]))
