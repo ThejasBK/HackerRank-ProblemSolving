@@ -1,0 +1,8 @@
+n, k = map(int,input().split())
+ls = list(map(int,input().split()))
+charged = int(input())
+actual = (sum(ls) - ls[k])/2
+if actual == charged:
+    print('Bon Appetit')
+else:
+    print(int(charged - actual))
