@@ -1,0 +1,7 @@
+Count = 0
+n = 5
+for _ in range(int(input())):
+    liked = n//2
+    Count += liked 
+    n = liked * 3
+print(Count)
