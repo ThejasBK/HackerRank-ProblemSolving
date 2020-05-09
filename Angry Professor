@@ -1,0 +1,10 @@
+for _ in range(int(input())):
+    strength, required = map(int,input().split())
+    ls = list(map(int,input().split()))
+    for i in ls:
+        if i <= 0:
+            required -= 1
+    if required <= 0:
+        print('NO')
+    else:
+        print('YES')
