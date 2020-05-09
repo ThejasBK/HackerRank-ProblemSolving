@@ -1,0 +1,14 @@
+a, b = map(int,input().split())
+x, y = map(int,input().split())
+list(map(int,input().split()))
+tree1 = list(map(int,input().split()))
+tree2 = list(map(int,input().split()))
+count1 = count2 = 0
+for i in tree1:
+    if b>= x + i >= a:
+        count1 += 1
+for i in tree2:
+    if b>= y + i >= a:
+        count2 += 1
+print(count1)
+print(count2)
