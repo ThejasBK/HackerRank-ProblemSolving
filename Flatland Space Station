@@ -1,0 +1,21 @@
+import sys
+cities, stations = map(int,input().split())
+ls = list(map(int,input().split()))
+if cities == stations:
+    print(0)
+    sys.exit()
+dist = []
+big = 0
+for i in range(cities):
+    ele = 999999999
+    if i in ls:
+        continue
+    else:
+        for j in ls:
+            if ele > abs(j - i):
+                ele = abs(j - i)
+                if ele == 1:
+                    break
+        if ele > big:
+            big = ele
+print(big)
