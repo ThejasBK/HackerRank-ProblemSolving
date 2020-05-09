@@ -1,0 +1,13 @@
+for _ in range(int(input())):
+    b, w = map(int,input().split())
+    bc, wc, z = map(int,input().split())
+    if min(bc,wc)+z < max(bc,wc):
+        if bc < wc:
+            count = bc * b
+            count += w * (bc + z)
+        else:
+            count = wc * w
+            count += b * (wc + z)
+    else:
+        count = bc * b + wc * w
+    print(count)
