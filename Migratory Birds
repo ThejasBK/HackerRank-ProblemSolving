@@ -1,0 +1,10 @@
+int(input())
+birds = list(map(int,input().split()))
+from collections import Counter
+birds = dict(Counter(birds))
+ls = birds.values()
+l = []
+for key in birds:
+    if birds[key] == max(ls):
+        l.append(key)
+print(min(l))
