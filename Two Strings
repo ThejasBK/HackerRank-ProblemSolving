@@ -1,0 +1,9 @@
+n = int(input())
+for _ in range(n):
+    flag = 0
+    a = set(list(input()))
+    b = set(list(input()))
+    if len(a.intersection(b)) > 0:
+        print('YES')
+    else:
+        print('NO')
