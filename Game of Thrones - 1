@@ -1,0 +1,11 @@
+from collections import Counter
+ls = dict(Counter(list(input())))
+count = 0
+for i in list(ls.values()):
+    if i % 2 != 0:
+        count += 1
+    if count > 1:
+        print('NO')
+        break
+if count < 2:
+    print('YES')
