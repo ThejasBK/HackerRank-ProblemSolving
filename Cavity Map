@@ -1,0 +1,12 @@
+for _ in range(int(input())):
+    l = list(input())
+    try:
+        mx = max(l)
+    except:
+        mx = '0'
+    if mx > l[0]:
+        if mx > l[-1]:
+            for k in range(len(l)):
+                if l[k] == mx:
+                    l[k] = 'X'
+    print(''.join(l))
