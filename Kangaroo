@@ -1,0 +1,30 @@
+import sys
+k1, j1, k2, j2 = map(int,input().split())
+kj1 = []
+kj2 = []
+if (k1 > k2 and j1 >= j2) or (k1 < k2 and j1 <= j2):
+    print('NO')
+elif (k1 > k2 and j1 < j2):
+    while k1 >= k2:
+        kj1.append(k1)
+        kj2.append(k2)
+        k1 += j1
+        k2 += j2
+    for i in range(len(kj1)):
+        for j in range(len(kj2)):
+            if i == j and kj1[i] == kj2[j]:
+                print('YES')
+                sys.exit()
+    print('NO')
+elif (k1 < k2 and j1 > j2):
+    while k1 <= k2:
+        kj1.append(k1)
+        kj2.append(k2)
+        k1 += j1
+        k2 += j2
+    for i in range(len(kj1)):
+        for j in range(len(kj2)):
+            if i == j and kj1[i] == kj2[j]:
+                print('YES')
+                sys.exit()
+    print('NO')
