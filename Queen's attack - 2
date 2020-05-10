@@ -1,0 +1,63 @@
+import sys
+board, obstacles = map(int,input().split())
+xposition, yposition = map(int,input().split())
+xposition1, yposition1 = xposition, yposition
+obst = []
+count = 0
+if board == 1:
+    print(0)
+    sys.exit()
+for _ in range(obstacles):
+    obst.append(list(map(int,input().split())))
+while xposition1 < board:
+    xposition1 += 1
+    if [xposition1,yposition1] in obst:
+        break
+    count += 1
+xposition1, yposition1 = xposition, yposition
+while yposition1 < board:
+    yposition1 += 1
+    if [xposition1,yposition1] in obst:
+        break
+    count += 1
+xposition1, yposition1 = xposition, yposition
+while xposition1 > 1:
+    xposition1 -= 1
+    if [xposition1,yposition1] in obst:
+        break
+    count += 1
+xposition1, yposition1 = xposition, yposition
+while yposition1 > 1:
+    yposition1 -= 1
+    if [xposition1,yposition1] in obst:
+        break
+    count += 1
+xposition1, yposition1 = xposition, yposition
+while xposition1 < board and yposition1 < board:
+    xposition1 += 1
+    yposition1 += 1
+    if [xposition1,yposition1] in obst:
+        break
+    count += 1
+xposition1, yposition1 = xposition, yposition
+while xposition1 > 1 and yposition1 > 1:
+    xposition1 -= 1
+    yposition1 -= 1
+    if [xposition1,yposition1] in obst:
+        break
+    count += 1
+xposition1, yposition1 = xposition, yposition
+while xposition1 > 1 and yposition1 < board:
+    xposition1 -= 1
+    yposition1 += 1
+    if [xposition1,yposition1] in obst:
+        break
+    count += 1
+xposition1, yposition1 = xposition, yposition
+while xposition1 < board and yposition1 > 1:
+    xposition1 += 1
+    yposition1 -= 1
+    if [xposition1,yposition1] in obst:
+        break
+    count += 1
+print(count)
