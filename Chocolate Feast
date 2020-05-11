@@ -1,0 +1,9 @@
+for _ in range(int(input())):
+    money, cost, req_wrappers = map(int,input().split())
+    choc = money // cost
+    wrappers = choc
+    while wrappers >= req_wrappers:
+        choc1 = (wrappers // req_wrappers)
+        choc += choc1
+        wrappers = (wrappers % req_wrappers) + choc1
+    print(choc)
