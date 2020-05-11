@@ -1,0 +1,14 @@
+initial, disc, minimum, total = map(int,input().split())
+count = 0
+if initial <= total:
+    count = 1
+    total -= initial
+    initial -= disc
+while total >= initial:
+    count += 1
+    total -= initial
+    if initial - disc <= minimum:
+        initial = minimum
+    else:   
+        initial -= disc
+print(count)
