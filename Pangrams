@@ -1,0 +1,8 @@
+x = input()
+x = x.lower()
+x = list(x.split())
+x = str(''.join(x))
+if len(set(list(x))) >= 26:
+    print('pangram')
+else:
+    print('not pangram')
