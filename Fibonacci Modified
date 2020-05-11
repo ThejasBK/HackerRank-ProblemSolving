@@ -1,0 +1,8 @@
+a, b, n = map(int,input().split())
+count = 2
+while count != n:
+    temp = a
+    a = b
+    b = temp + a**2
+    count += 1
+print(b)
